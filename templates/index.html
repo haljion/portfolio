@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- Form
+  ================================================== -->
+<div class="bk-top">
+    <div class="container">
+        <div class="row">
+            <div id="top" class="col-12">
+                <div class="content">haljion's PORTFOLIO</div>
+                <div class="down"><a href="#profile"><i class="fa fa-chevron-circle-down "></i></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="bk-lightblue">
+    <div class="container">
+        <div class="row">
+            <div id="profile" class="content col-12">
+                <div class="title">PROFILE</div>
+                <hr class="divider">
+                <div class="container">
+                    <div class="row">
+                        <div class="image col-md-12 col-lg-4">
+                            <img src="/static/image/icon.png" class="shake-slow">
+                        </div>
+                        <div class="detail col-md-12 col-lg-8">
+                            <div class="small-title"><span>INFORMATION</span></div>
+                            <p>年齢：24<br>エンジニア歴：約2年<br>活動範囲：主に都内(千葉県在住)</p>
+                            <div class="small-title"><span>ABOUT</span></div>
+                            <p>2018年6月より正社員(SES)を２社経験後、2019年12月よりフリーランスエンジニアとして活動。業務では主にJavaを使用した業務システムの開発案件に携わってきました。また、業務外で興味のある分野について学習及び制作を行っており、今後はそれらの知識を活かして業務でWebアプリケーション、機械学習、IoT等の分野に携わりたいと考えております。
+                            </p>
+                            <div class="small-title"><span>CONTACT</span></div>
+                            <p>GitHub - <a href="https://github.com/haljion"
+                                    target="_brank">https://github.com/haljion</a>
+                            </p>
+                            <p>mail - haljion.helmold[at]gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bk-white">
+    <div class="container">
+        <div class="row">
+            <div id="skill" class="content col-12">
+                <div class="title">SKILL</div>
+                <div class="small-title"><span>SKILL LEVEL</span></div>
+                <div class="detail">
+                    <ul>
+                        <li><span class="star">5</span><span>：とてもできる</span></li>
+                        <li><span class="star">4</span><span>：一人称で実装可能</span></li>
+                        <li><span class="star">3</span><span>：サポートありで実装可能</span></li>
+                        <div class="small-title"><span>実務経験の有無</span></div>
+                        <li><span class="star">2</span><span>：個人制作中～制作経験あり</span></li>
+                        <li><span class="star">1</span><span>：学習中～学習済み</span></li>
+                    </ul>
+                </div>
+
+                <div class="small-title"><span>LANGUAGE</span></div>
+                {% for skill in skills %}
+                {% if skill.flag == 1 %}
+                <div class="content">
+                    <img src="static{{ skill.image }}" alt="{{ skill.image }}">
+                    <div class="name">{{ skill.name }}</div>
+                    <div class="star">{{ skill.rank }}</div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                <div class="small-title"><span>FRAMEWORK</span></div>
+                <% skills.forEach((skill) => { %>
+                <% if(skill.flag == 2) { %>
+                <div class="content">
+                    <img src="<%= skill.image %>" alt="<%= skill.name %>">
+                    <div class="name"><%= skill.name %></div>
+                    <div class="star"><%= skill.rank %></div>
+                </div>
+                <% } %>
+                <% }) %>
+                <div class="small-title"><span>DATABASE</span></div>
+                <% skills.forEach((skill) => { %>
+                <% if(skill.flag == 3) { %>
+                <div class="content">
+                    <img src="<%= skill.image %>" alt="<%= skill.name %>">
+                    <div class="name"><%= skill.name %></div>
+                    <div class="star"><%= skill.rank %></div>
+                </div>
+                <% } %>
+                <% }) %>
+                <div class="small-title"><span>OTHER</span></div>
+                <% skills.forEach((skill) => { %>
+                <% if(skill.flag == 4) { %>
+                <div class="content">
+                    <img src="<%= skill.image %>" alt="<%= skill.name %>">
+                    <div class="name"><%= skill.name %></div>
+                    <div class="star"><%= skill.rank %></div>
+                </div>
+                <% } %>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bk-lightblue">
+    <div class="container">
+        <div class="row">
+            <div id="portfolio" class="content col-12">
+                <div class="title">PORTFOLIO</div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-4 product">
+                            <div class="ribbon">
+                                <div class="name">haljion's portfolio site</div>
+                            </div>
+                            <img src="/static/image/portfolio.png" class="shake-slow">
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 product">
+                            <div class="ribbon">
+                                <div class="name">MoneyBOT</div>
+                            </div>
+                            <img src="/static/image/moneybothalf.png" class="shake-slow">
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 product">
+                            <div class="ribbon">
+                                <div class="name">LifeBOT</div>
+                            </div>
+                            <img src="/static/image/muchohalf.png" class="shake-slow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
