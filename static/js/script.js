@@ -3,13 +3,13 @@ $(document).ready(function () {
   $('a[href^="#"]').click(function () {
     //スクロールのスピード
     var speed = 500;
-    var header = $('header').height();
+    var header = $("#header").height();
     //リンク元を取得
     var href = $(this).attr("href");
     //リンク先を取得
     var target = $(href == "#" || href == "" ? 'html' : href);
-    //リンク先までの距離を取得(ヘッダー分+50px下へずらす)
-    var position = target.offset().top - (header + 50);
+    //リンク先までの距離を取得(ヘッダー分下へずらす)
+    var position = target.offset().top - header;
     //スムーススクロール
     $("html, body").animate({ scrollTop: position }, speed, "swing");
     return false;
@@ -37,23 +37,4 @@ $(document).ready(function () {
       $(".jq-modal" + index).fadeOut();
     });
   });
-
-
-  var window_h = $(window).height();
-  $(window).on("scroll", function () {
-
-    var scroll_top = $(window).scrollTop();
-
-    $(".wrapper").each(function () {
-      var element_position = $(this).offset().top;
-
-
-      if (scroll_top >= element_position - window_h + 200) {
-        $(this).addClass("fadein");
-      } else {
-        $(this).removeClass("fadein");
-      }
-    });
-  });
-
 });

@@ -14,7 +14,7 @@
 </div>
 
 
-<div class="bk-lightblue">
+<div class="bk-white">
     <div class="container">
         <div class="row">
             <div id="profile" class="content col-12">
@@ -28,7 +28,7 @@
                         <div class="detail col-md-12 col-lg-8">
                             <div class="small-title"><span>INFORMATION</span></div>
                             <p>年齢：24<br>エンジニア歴：約2年<br>活動範囲：主に都内(千葉県在住)</p>
-                            <div class="small-title"><span>ABOUT</span></div>
+                            <div class="small-title"><span>ABOUT ME</span></div>
                             <p>2018年6月より正社員(SES)を２社経験後、2019年12月よりフリーランスエンジニアとして活動。業務では主にJavaを使用した業務システムの開発案件に携わってきました。また、業務外で興味のある分野について学習及び制作を行っており、今後はそれらの知識を活かして業務でWebアプリケーション、機械学習、IoT等の分野に携わりたいと考えております。
                             </p>
                             <div class="small-title"><span>CONTACT</span></div>
@@ -44,7 +44,7 @@
     </div>
 </div>
 
-<div class="bk-white">
+<div class="bk-lightblue">
     <div class="container">
         <div class="row">
             <div id="skill" class="content col-12">
@@ -62,77 +62,60 @@
                 </div>
 
                 <div class="small-title"><span>LANGUAGE</span></div>
-                {% for skill in skills %}
-                {% if skill.flag == 1 %}
-                <div class="content">
-                    <img src="static{{ skill.image }}" alt="{{ skill.image }}">
-                    <div class="name">{{ skill.name }}</div>
-                    <div class="star">{{ skill.rank }}</div>
-                </div>
-                {% endif %}
-                {% endfor %}
-                <div class="small-title"><span>FRAMEWORK</span></div>
-                <% skills.forEach((skill) => { %>
-                <% if(skill.flag == 2) { %>
-                <div class="content">
-                    <img src="<%= skill.image %>" alt="<%= skill.name %>">
-                    <div class="name"><%= skill.name %></div>
-                    <div class="star"><%= skill.rank %></div>
-                </div>
-                <% } %>
-                <% }) %>
-                <div class="small-title"><span>DATABASE</span></div>
-                <% skills.forEach((skill) => { %>
-                <% if(skill.flag == 3) { %>
-                <div class="content">
-                    <img src="<%= skill.image %>" alt="<%= skill.name %>">
-                    <div class="name"><%= skill.name %></div>
-                    <div class="star"><%= skill.rank %></div>
-                </div>
-                <% } %>
-                <% }) %>
-                <div class="small-title"><span>OTHER</span></div>
-                <% skills.forEach((skill) => { %>
-                <% if(skill.flag == 4) { %>
-                <div class="content">
-                    <img src="<%= skill.image %>" alt="<%= skill.name %>">
-                    <div class="name"><%= skill.name %></div>
-                    <div class="star"><%= skill.rank %></div>
-                </div>
-                <% } %>
-                <% }) %>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="bk-lightblue">
-    <div class="container">
-        <div class="row">
-            <div id="portfolio" class="content col-12">
-                <div class="title">PORTFOLIO</div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 col-sm-6 col-md-4 product">
-                            <div class="ribbon">
-                                <div class="name">haljion's portfolio site</div>
-                            </div>
-                            <img src="/static/image/portfolio.png" class="shake-slow">
+                        {% for skill in skills %}
+                        {% if skill.flag == 1 %}
+                        <div class="content col-sm-6 col-md-4 col-lg-3">
+                            <img src="{{ skill.image }}" alt="{{ skill.image }}">
+                            <div class="name">{{ skill.name }}</div>
+                            <div class="star">{{ skill.rank }}</div>
                         </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="small-title"><span>FRAMEWORK</span></div>
+                <div class="container">
+                    <div class="row">
 
-                        <div class="col-12 col-sm-6 col-md-4 product">
-                            <div class="ribbon">
-                                <div class="name">MoneyBOT</div>
-                            </div>
-                            <img src="/static/image/moneybothalf.png" class="shake-slow">
+                        {% for skill in skills %}
+                        {% if skill.flag == 2 %}
+                        <div class="content col-sm-6 col-md-4 col-lg-3">
+                            <img src="{{ skill.image }}" alt="{{ skill.image }}">
+                            <div class="name">{{ skill.name }}</div>
+                            <div class="star">{{ skill.rank }}</div>
                         </div>
-
-                        <div class="col-12 col-sm-6 col-md-4 product">
-                            <div class="ribbon">
-                                <div class="name">LifeBOT</div>
-                            </div>
-                            <img src="/static/image/muchohalf.png" class="shake-slow">
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="small-title"><span>DATABASE</span></div>
+                <div class="container">
+                    <div class="row">
+                        {% for skill in skills %}
+                        {% if skill.flag == 3 %}
+                        <div class="content col-sm-6 col-md-4 col-lg-3">
+                            <img src="{{ skill.image }}" alt="{{ skill.image }}">
+                            <div class="name">{{ skill.name }}</div>
+                            <div class="star">{{ skill.rank }}</div>
                         </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="small-title"><span>OTHER</span></div>
+                <div class="container">
+                    <div class="row">
+                        {% for skill in skills %}
+                        {% if skill.flag == 4 %}
+                        <div class="content col-sm-6 col-md-4 col-lg-3">
+                            <img src="{{ skill.image }}" alt="{{ skill.image }}">
+                            <div class="name">{{ skill.name }}</div>
+                            <div class="star">{{ skill.rank }}</div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -140,5 +123,66 @@
     </div>
 </div>
 
+<div class="bk-white">
+    <div class="container-fluid p-0">
+        <div class="row">
+            <div id="portfolio" class="content col-12">
+                <div class="title">PORTFOLIO</div>
+                <div class="container-fluid p-0">
+                    <div class="row">
+                        {% for portfolio in portfolios %}
+                        <div class="col-12 col-sm-6 col-md-4 product">
+                            <!-- <img src="{{ portfolio.top_image }}"> -->
+                            <img src="/static/image/products/sample_01.gif">
+                            <div class="name">{{ portfolio.name }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-area">
+    {% for portfolio in portfolios %}
+    <div class="modal">
+        <div class="modal-bg"></div>
+        <div class="modal-content">
+            <div class="container">
+                <div class="row">
+                    <div class="content-l col-lg-5">
+                        <img src="{{ portfolio.image }}" class="content-img">
+                        <div class="git">
+                            <a href="{{ portfolio.git }}" target="_brank">
+                                <img src="/static/image/github.svg">GitHub
+                            </a>
+                        </div>
+                        <div class="url">
+                            <a href="{{ portfolio.url or '' }}">{{ portfolio.url or '' }}</a>
+                        </div>
+                    </div>
+                    <div class="content-r col-lg-7">
+                        <div class="name">{{ portfolio.name }}</div>
+                        <div class="about">
+                            <div class="small-title"><span>ABOUT</span></div>
+                            <div class="detail">{{ portfolio.detail }}</div>
+                        </div>
+                        <div class="used">
+                            <div class="small-title"><span>USED</span></div>
+
+                            <ul>
+
+                                <li></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
