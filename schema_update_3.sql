@@ -1,0 +1,3 @@
+UPDATE portfolios set detail = 'このWebページです。Bootstrapを導入し、レスポンシブ対応になっています。brフロント側の技術が向上次第、適宜改良を加える予定です。br初めて制作物をウェブ上に公開したので、インフラ側の勉強にもなりました。' WHERE id = 1;
+UPDATE portfolios set detail = '家計簿を管理するSlackのbotです。brGoogle Spread Sheetと連携して、Slackからカテゴリーや金額等を入力するとシートに記載される仕組みになっています。' WHERE id = 2;
+UPDATE portfolios set detail = '天気予報や電車の運行情報を取得するSlackのbotです。brBeautifulsoupやSeleniumを使用したスクレイピングで情報を取得しています。' WHERE id = 3;

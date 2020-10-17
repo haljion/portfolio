@@ -8,8 +8,8 @@ $(document).ready(function () {
     var href = $(this).attr("href");
     //リンク先を取得
     var target = $(href == "#" || href == "" ? 'html' : href);
-    //リンク先までの距離を取得(ヘッダー分下へずらす)
-    var position = target.offset().top - header;
+    //リンク先までの距離を取得(ヘッダー + padding分下へずらす)
+    var position = target.offset().top - (header + 30);
     //スムーススクロール
     $("html, body").animate({ scrollTop: position }, speed, "swing");
     return false;
@@ -26,15 +26,27 @@ $(document).ready(function () {
     $(this).addClass("jq-modal-button" + index);
   });
 
+  $(".slick").each(function (index, element) {
+    $(this).addClass("jq-slick" + index);
+  });
+
   $(".modal").each(function (index, element) {
     $(this).addClass("jq-modal" + index);
 
     $(".jq-modal-button" + index).click(function () {
+
       $(".jq-modal" + index).fadeIn();
+      $(".jq-slick" + index).slick('setPosition');
     });
 
     $(".modal-bg").click(function () {
       $(".jq-modal" + index).fadeOut();
     });
+  });
+
+  $(".slick").slick({
+    arrows: false,
+    dots: true,
+    dotsClass: 'slide-dots'
   });
 });

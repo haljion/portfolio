@@ -10,14 +10,19 @@ body {
 ul {
   list-style: none;
 }
-.container {
+.container,
+.container-fluid {
   width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
-.container .row {
+.container .row,
+.container-fluid .row {
   margin: 0 auto;
 }
 .container .row .content,
 .container-fluid .row .content {
+  padding: 0px;
   text-align: center;
   background-size: cover;
   background-attachment: fixed;
@@ -25,7 +30,8 @@ ul {
 }
 
 hr.divider {
-  max-width: 8.25rem;
+  max-width: 4.25rem;
+  margin-top: 0px;
   border-width: 0.2rem;
   border-color: #f4623a;
 }
@@ -63,6 +69,13 @@ hr.divider {
 
 .title {
   font-size: 2.5rem;
+  font-family: "Sedgwick Ave", cursive;
+  font-weight: bold;
+}
+
+.small-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .bk-top {
@@ -73,7 +86,7 @@ hr.divider {
   background-position: center;
 }
 .bk-lightblue {
-  background-color: #b0e0e6;
+  background-color: #cfeaf5;
   background-size: cover;
   background-position: center;
 }
@@ -85,12 +98,14 @@ hr.divider {
 
 #top {
   font-family: "Sedgwick Ave", cursive;
-  font-size: 4rem;
+  font-weight: bold;
+  font-size: 3rem;
   height: 100vh;
   text-align: center;
 }
 #top .content {
-  padding-top: 40%;
+  padding-top: 35%;
+  color: #f4623a;
 }
 #top .down {
   padding-top: 15%;
@@ -101,28 +116,39 @@ hr.divider {
   color: #f4623a;
 }
 
-#profile {
-}
 #profile .small-title span {
   font-size: 1.5rem;
   color: #ffffff;
   text-shadow: 2px 2px 10px #777, -2px 2px 10px #777, 2px -2px 10px #777, -2px -2px 10px #777;
 }
-#profile img {
+#profile img.icon {
   height: 250px;
   width: 250px;
 }
+#profile img.git {
+  height: 1.2rem;
+  width: 1.2rem;
+}
 #profile .detail p {
+  margin: 0;
+  padding: 0;
+  text-align: left;
   text-shadow: 2px 2px 10px #fff, -2px 2px 10px #fff, 2px -2px 10px #fff, -2px -2px 10px #fff;
 }
-
-#portfolio .product img {
-  width: 100%;
+#profile .detail a:link,
+#profile .detail a:visited,
+#profile .detail a:hover,
+#profile .detail a:active {
+  color: #000;
 }
 
 #skill .detail {
   margin: 0px auto;
   width: 50%;
+  text-align: left;
+}
+#skill .small-title {
+  text-align: center;
 }
 #skill .small-title span {
   font-size: 1.5rem;
@@ -142,6 +168,32 @@ hr.divider {
 }
 #portfolio .product {
   padding: 0px;
+  overflow: hidden;
+  position: relative;
+}
+#portfolio .product .name {
+  font-family: "Sedgwick Ave", cursive;
+  text-align: center;
+  font-size: 1.7rem;
+  color: #fff;
+}
+#portfolio .product .mask {
+  width: 100%;
+  height: 100%;
+  position: absolute; /* 絶対位置指定 */
+  top: 0;
+  left: 0;
+  opacity: 0; /* マスクを表示しない */
+  background-color: rgba(244, 98, 58, 0.75); /* マスクは半透明 */
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#portfolio .product:hover .mask {
+  opacity: 1; /* マスクを表示する */
 }
 #portfolio .product img {
   width: 100%;
@@ -158,14 +210,115 @@ hr.divider {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  height: 70%;
-  width: 70%;
+  height: 75%;
+  width: 75%;
   background-color: #ffffff;
+  overflow-y: scroll;
+  margin: 0px auto;
+  padding-top: 1.5rem;
+  text-align: center;
 }
-#modal-area .modal-content img{
-  /* margin-top: 30%; */
+#modal-area .name {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Sedgwick Ave", cursive;
+  font-weight: bold;
+}
+#modal-area .small-title {
+  text-align: center;
+}
+#modal-area .small-title span {
+  font-size: 1.3rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 10px #777, -2px 2px 10px #777, 2px -2px 10px #777, -2px -2px 10px #777;
+}
+#modal-area .modal-content img {
+  margin: 0px auto;
   width: 100%;
 }
-#modal-area .git img{
-  width:1rem
+#modal-area .detail {
+  width: 75%;
+  margin: 0px auto;
+  text-align: left;
+}
+#modal-area .detail p {
+  margin: 5px;
+}
+#modal-area .git {
+  display: inline;
+}
+#modal-area .git img {
+  width: 1rem;
+}
+#modal-area .used_skills {
+  width: 80%;
+  margin: 0px auto;
+  padding: 0px auto;
+  text-align: left;
+}
+#modal-area .used_skills li {
+  display: inline-block;
+  position: relative;
+  list-style-type: none !important;
+  /*ポチ消す*/
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  margin-bottom: 5px;
+  line-height: 1.5;
+  background: #dbebf8;
+  vertical-align: middle;
+  color: #505050;
+  border-radius: 15px 0px 0px 15px;
+}
+#modal-area ul li:before {
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+  width: 1em;
+  height: 1em;
+  background: #fff;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.slick {
+  margin: 0px auto;
+  padding: 0px;
+  height: auto;
+  width: 70%;
+}
+.slick li img {
+  border: solid 1px;
+}
+
+button {
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  font-size: 2rem;
+}
+.slide-dots {
+  text-align: center;
+  padding: 0px;
+}
+.slide-dots li {
+  display: inline-block;
+}
+.slide-dots li button {
+  position: relative;
+  text-indent: -9999px;
+}
+.slide-dots li button:before {
+  content: "●";
+  font-size: 2rem;
+  text-indent: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ccc;
+}
+.slide-dots li.slick-active button:before {
+  content: "●";
+  font-size: 2rem;
+  color: #000;
 }

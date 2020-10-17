@@ -7,12 +7,11 @@
         <div class="row">
             <div id="top" class="col-12">
                 <div class="content">haljion's PORTFOLIO</div>
-                <div class="down"><a href="#profile"><i class="fa fa-chevron-circle-down "></i></a></div>
+                <div class="down"><a href="#profile"><i class="fa fa-chevron-circle-down"></i></a></div>
             </div>
         </div>
     </div>
 </div>
-
 
 <div class="bk-white">
     <div class="container">
@@ -23,19 +22,28 @@
                 <div class="container">
                     <div class="row">
                         <div class="image col-md-12 col-lg-4">
-                            <img src="/static/image/icon.png" class="shake-slow">
+                            <img src="/static/image/icon.png" class="icon">
                         </div>
                         <div class="detail col-md-12 col-lg-8">
-                            <div class="small-title"><span>INFORMATION</span></div>
+                            <div class="small-title"><span>- INFORMATION -</span></div>
                             <p>年齢：24<br>エンジニア歴：約2年<br>活動範囲：主に都内(千葉県在住)</p>
-                            <div class="small-title"><span>ABOUT ME</span></div>
-                            <p>2018年6月より正社員(SES)を２社経験後、2019年12月よりフリーランスエンジニアとして活動。業務では主にJavaを使用した業務システムの開発案件に携わってきました。また、業務外で興味のある分野について学習及び制作を行っており、今後はそれらの知識を活かして業務でWebアプリケーション、機械学習、IoT等の分野に携わりたいと考えております。
+                            <div class="small-title"><span>- ABOUT ME -</span></div>
+                            <p>2018年6月より正社員(SES)を２社経験後、</p>
+                            <p>2019年12月よりフリーランスエンジニアとして活動しています。</p>
+                            <p>業務では主にJavaを使用した業務システムの開発案件に携わってきました。</p>
+                            <p>現在は分析・機械学習などの分野に興味を持ち、日々学習を進めています。</p>
+                            <p>業務委託、正社員などの形態を問わず、Pythonの経験を積める案件を探しています。</p>
+                            <div class="small-title"><span>- CONTACT -</span></div>
+                            <p>
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                - haljion.helmold [at] gmail.com
                             </p>
-                            <div class="small-title"><span>CONTACT</span></div>
-                            <p>GitHub - <a href="https://github.com/haljion"
-                                    target="_brank">https://github.com/haljion</a>
+                            <p>
+                                <img src="/static/image/github.svg" class="git">
+                                <a href="https://github.com/haljion" target="_brank">
+                                    - GitHub
+                                </a>
                             </p>
-                            <p>mail - haljion.helmold[at]gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -49,19 +57,19 @@
         <div class="row">
             <div id="skill" class="content col-12">
                 <div class="title">SKILL</div>
-                <div class="small-title"><span>SKILL LEVEL</span></div>
+                <hr class="divider">
+                <div class="small-title"><span>- SKILL LEVEL -</span></div>
                 <div class="detail">
                     <ul>
                         <li><span class="star">5</span><span>：とてもできる</span></li>
                         <li><span class="star">4</span><span>：一人称で実装可能</span></li>
-                        <li><span class="star">3</span><span>：サポートありで実装可能</span></li>
-                        <div class="small-title"><span>実務経験の有無</span></div>
-                        <li><span class="star">2</span><span>：個人制作中～制作経験あり</span></li>
-                        <li><span class="star">1</span><span>：学習中～学習済み</span></li>
+                        <li><span class="star">3</span><span>：業務or個人制作で使用経験あり</span></li>
+                        <li><span class="star">2</span><span>：学習済み</span></li>
+                        <li><span class="star">1</span><span>：学習中</span></li>
                     </ul>
                 </div>
 
-                <div class="small-title"><span>LANGUAGE</span></div>
+                <div class="small-title"><span>- LANGUAGE -</span></div>
                 <div class="container">
                     <div class="row">
                         {% for skill in skills %}
@@ -75,7 +83,7 @@
                         {% endfor %}
                     </div>
                 </div>
-                <div class="small-title"><span>FRAMEWORK</span></div>
+                <div class="small-title"><span>- FRAMEWORK -</span></div>
                 <div class="container">
                     <div class="row">
 
@@ -90,7 +98,7 @@
                         {% endfor %}
                     </div>
                 </div>
-                <div class="small-title"><span>DATABASE</span></div>
+                <div class="small-title"><span>- DATABASE -</span></div>
                 <div class="container">
                     <div class="row">
                         {% for skill in skills %}
@@ -104,7 +112,7 @@
                         {% endfor %}
                     </div>
                 </div>
-                <div class="small-title"><span>OTHER</span></div>
+                <div class="small-title"><span>- OTHER -</span></div>
                 <div class="container">
                     <div class="row">
                         {% for skill in skills %}
@@ -128,13 +136,15 @@
         <div class="row">
             <div id="portfolio" class="content col-12">
                 <div class="title">PORTFOLIO</div>
+                <hr class="divider">
                 <div class="container-fluid p-0">
                     <div class="row">
                         {% for portfolio in portfolios %}
                         <div class="col-12 col-sm-6 col-md-4 product">
-                            <!-- <img src="{{ portfolio.top_image }}"> -->
-                            <img src="/static/image/products/sample_01.gif">
-                            <div class="name">{{ portfolio.name }}</div>
+                            <img src="{{ portfolio[0].top_image }}">
+                            <div class="mask">
+                                <div class="name">{{ portfolio[0].name }}</div>
+                            </div>
                         </div>
                         {% endfor %}
                     </div>
@@ -145,41 +155,43 @@
 </div>
 
 <div id="modal-area">
-    {% for portfolio in portfolios %}
+    {% for portfolio, used_skills, images, details in portfolios %}
     <div class="modal">
         <div class="modal-bg"></div>
         <div class="modal-content">
-            <div class="container">
-                <div class="row">
-                    <div class="content-l col-lg-5">
-                        <img src="{{ portfolio.image }}" class="content-img">
-                        <div class="git">
-                            <a href="{{ portfolio.git }}" target="_brank">
-                                <img src="/static/image/github.svg">GitHub
-                            </a>
-                        </div>
-                        <div class="url">
-                            <a href="{{ portfolio.url or '' }}">{{ portfolio.url or '' }}</a>
-                        </div>
-                    </div>
-                    <div class="content-r col-lg-7">
-                        <div class="name">{{ portfolio.name }}</div>
-                        <div class="about">
-                            <div class="small-title"><span>ABOUT</span></div>
-                            <div class="detail">{{ portfolio.detail }}</div>
-                        </div>
-                        <div class="used">
-                            <div class="small-title"><span>USED</span></div>
-
-                            <ul>
-
-                                <li></li>
-
-                            </ul>
-                        </div>
-                    </div>
+            <div class="name">{{ portfolio.name }}</div>
+            <div class="git">
+                <a href="{{ portfolio.git }}" target="_brank">
+                    <img src="/static/image/github.svg">GitHub
+                </a>
+            </div>
+            <div class="url">
+                <a href="{{ portfolio.url or '' }}">
+                    {{ portfolio.url or '' }}
+                </a>
+            </div>
+            <div class="about">
+                <div class="small-title"><span>- ABOUT -</span></div>
+                <div class="detail">
+                    {% for detail in details %}
+                    <p>{{ detail }}</p>
+                    {% endfor %}
                 </div>
             </div>
+            <div class="used">
+                <div class="small-title"><span>- USED -</span></div>
+                <ul class="used_skills">
+                    {% for used_skill in used_skills %}
+                    <li>{{ used_skill }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="small-title"><span>- IMAGES -</span></div>
+            <ul class="slick">
+                {% for image in images %}
+                <li><img src="{{ image }}"></li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
     {% endfor %}

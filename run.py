@@ -13,6 +13,13 @@ def index():
 
     skills = Skills.query.all()
     portfolios = Portfolios.query.all()
+    used_skills = [portfolio.used_skills.split(":") \
+        for portfolio in portfolios]
+    images = [portfolio.image.split(":") \
+        for portfolio in portfolios]
+    details = [portfolio.detail.split("br") \
+        for portfolio in portfolios]
+    portfolios = list(zip(portfolios, used_skills, images, details))
     return render_template("index.html",
                            title=title,
                            skills=skills,
