@@ -13,7 +13,6 @@
   - Bootstrap
 - Javascript
   - JQuery
-- SQLite3(ローカル環境)
-- PosgreSQL(本番環境)
+- SQLite3
 - Git
 - heroku
