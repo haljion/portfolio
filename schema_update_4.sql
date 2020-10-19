@@ -1,1 +1,0 @@
-UPDATE portfolios set detail = 'このWebページです。Bootstrapを導入し、レスポンシブ対応になっています。brフロント側の技術が向上次第、適宜改良を加える予定です。br初めて制作物をウェブ上に公開したので、多少インフラ側の勉強にもなりました。br現在一時的にHerokuで公開する形となっていますが、のちにAWSに移行する予定です', used_skills = 'HTML:CSS:Bootstrap:JQuery:Python:Flask:SQLite3:Git:virtualenv:Heroku' WHERE id = 1;
