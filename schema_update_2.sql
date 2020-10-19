@@ -1,2 +1,0 @@
-UPDATE portfolios set top_image = '/static/image/products/moneybot_top.png', image = '/static/image/products/moneybot_01.png:/static/image/products/moneybot_02.png:/static/image/products/moneybot_03.png' WHERE id = 2;
-UPDATE portfolios set top_image = '/static/image/products/lifebot_top.png', image = '/static/image/products/lifebot_01.png:/static/image/products/lifebot_02.png' WHERE id = 3;
